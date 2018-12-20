@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif, height:100%}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #5b9aa0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    
+}
+    
+.topnav {
+ overflow: hidden;
+  background-color: #000;
+  padding-top: 20px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+    
+</style>
+</head>
+<body>
+    
+  
+    
+<div class="topnav">
+  
+    
+<a class="navbar-brand" href="#">
+    <img src="iiitdwd.jpg" alt="Logo" style="width:40px;">
+  </a>   
+    
+<!-- home --> 
+<button onclick="window.location='index.html';" style="width:110px;">Home</button>
+     
+<!-- services  --> 
+<button onclick="window.location='services.html';" style="width:110px;">Services</button>
+    
+<!-- resources  --> 
+<button onclick="window.location='resourses.html';" style="width:110px;">Resources</button>   
+
+
+   
+    
+    
+<!-- about  --> 
+<button onclick="window.location='about.html';" style="width:110px;">About</button>
+ 
+     
+</div>
+
+    
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<br><br><br><br><br><br><br><br><br>
+    <img src="lib1.jpg">
+    <img src="lib2.jpg">
+    <img src="lib3.jpg">
+    <img src="lib4.jpg">
+    <p>
+    <b><i><font size="7"><center>Description</center></font></i></b><br>
+    <i><font size="5">IIIT Dharwad Central Library is innovative, user-focused and aims to develop, organize, preserve and deliver information for the IIIT Dharwad community. IIIT Dharwad is explores and adopt new technologies to provide effective information services. Central Library is fully automated by using library management software Koha and all books are barcoded. The Library offer many services to our patrons like Automated Circulation System, Online Public Access Catalogue (OPAC) and special collection over placement. It has a collection of over 3500+ Volumes, 500+ Titles and 150+ CD/DVD collections (Springer, Cambridge, CRC press and other popular publication titles) and also it subscribes to Magazines and Newspapers. That supplements the teaching, research and development of Institution. The demands of the ever-growing research areas multiple disciplines is being catered with the help of latest volumes, in almost all fields of Engineering, Science, Technology, Management and general areas.</font></i>
+    
+    </p>
+    <footer class="k2t-footer">
+
+		
+		
+					<div class="k2t-bottom" style="background-color:#003366; background-size:cover;">
+				<div class="k2t-wrap">
+					<div class="k2t-row">
+<h4 class="widget-title"><span>Contact</span></h4>			<div class="textwidget"><p style="color:white;">3rd floor IT Park, Opp. Glass House,Hubli- 580029.</p>
+<ul>
+<li style="color:white;"><i class="fa fa-phone"></i>+91 836 225 0879</li>
+<li style="color:white;"><a href="mailto:sb.iiitdwd@gmail.com" style="color:white;"><i class="fa fa-envelope"></i>sb.iiitdwd@gmail.com </a></li>
+<li style="color:white;"><i class="fa fa-fax"></i> 0836 2357747</li>
+</ul>
+</div>
+		</aside></div><div class="col-3"><aside id="text-10" class="widget widget_text"><h4 class="widget-title">
+		
+	</footer><!-- .k2t-footer -->
+	</div><!-- .k2t-container -->
+
+
+</body>
+</html>
+
+
+
+
+
+

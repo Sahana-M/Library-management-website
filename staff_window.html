@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {background: #f2f2f2 font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #5b9aa0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    max-width: auto;
+   padding: 10px;
+    background-color: #5b9aa0;
+}
+
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  padding-bottom: 100px;
+  background-color: white;
+  overflow: scroll;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 450px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    background-color: #111;
+    overflow-x: auto;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+    
+        
+.topnav {
+  overflow: hidden;
+  background-color: #000;
+  padding-top: 20px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+   
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+    
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 100px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}    
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+</style>
+</head>
+    
+    
+    
+<body>
+    
+<div class="topnav">
+  
+    
+<a class="navbar-brand" href="#">
+    <img src="iiitdwd.jpg" alt="Logo" style="width:40px;">
+  </a>   
+    
+<!-- HOME -->
+ <button onclick="window.location='index.html';" style="width:110px;">Home</button>
+    
+<!-- services  --> 
+<button onclick="window.location='about.html';" style="width:110px;">Services</button>
+    
+<!-- resources  --> 
+<button onclick="window.location='resourses.html';" style="width:110px;">Resources</button>    
+    
+<!-- gallery  --> 
+ <button onclick="window.location='gallery.html';" style="width:110px;">Gallery</button>  
+
+    
+<!-- Publisher --> 
+<button onclick="window.location='publisher.php';" style="width:110px;">Publisher</button>
+
+<!-- Student --> 
+<button onclick="window.location='students.php';" style="width:110px;">Student</button>
+
+<!-- About  --> 
+<button onclick="window.location='about.html';" style="width:110px;">About</button>
+
+
+<!-- Log out -->
+<button onclick="window.location='index.html';" style="width:110px; float:right;">Logout</button>
+</div>   
+    
+    
+<div data-role="page">
+  <div data-role="header" align = "right">
+      <h1><font color ="black">Staff Window</font></h1>
+  </div>
+
+
+<div class="sidenav" >
+<!-- view book button -->
+<form action="book.php" method="POST">
+<button type="submit" class="btn"  style="width:150px;">View all books</button>
+</form>
+
+    
+<!-- Insert Books -->
+<button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Insert books</button>
+<div id="id02" class="modal" align = "center">
+    <form class="form-container" action="book_insert.php" method="POST">
+        <h2>Form</h2>
+        <label>ID:</label>
+        <input class="input" name="id" type="text" value=""><br><br>
+        <label>Title:</label>
+        <input class="input" name="title" type="text" value=""><br><br>
+        <label>Edition:</label>
+        <input class="input" name="edition" type="text" value=""><br><br>
+        <label>Author:</label>
+        <input class="input" name="author" type="text" value=""><br><br>
+        <label>ISBN:</label>
+        <input class="input" name="isbn" type="text" value=""><br><br>
+        <label>Availability:</label>
+        <input class="input" name="availability" type="text" value=""><br><br>
+        <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+    </form>
+</div>
+ 
+<!-- Issue books button -->
+<button onclick="document.getElementById('id06').style.display='block'" style="width:150px;">Issue books</button>
+<div id="id06" class="modal"  align = "center">
+    <form class="form-container" action="book_issue.php" method = "post">
+    <h1>Issue Book</h1>
+   <label>Book ID</label>
+                <input class="input" name="bid" type="text" value=""><br><br>
+   <label>Student ID</label> 
+                <input class="input" name="sid" type="text" value=""><br><br>
+    <label>Issue Date</label> 
+                <input class="input" name="date1" type="date" value=""><br><br>
+    <label>Return Date</label> 
+                <input class="input" name="date2" type="date" value=""><br><br>
+    <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+              <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn">Cancel</button>
+  </form>
+</div>
+
+<!-- Return Book -->
+<button onclick="document.getElementById('id07').style.display='block'" style="width:150px;">Return Book </button>
+<div id="id07" class="modal"  align = "center">
+    <form class="form-container" action="return_book.php" method = "post">
+        <h1>Return Book</h1>
+        <label>Book ID</label>
+          <input class="input" name="bid" type="text" value=""><br><br>
+        <label>Student ID</label>
+          <input class="input" name="sid" type="text" value=""><br><br>
+          <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+          <button type="button" onclick="document.getElementById('id07').style.display='none'" class="cancelbtn">Cancel</button>
+    </form>
+</div>
+    
+    <!--Renew Book -->
+<button onclick="document.getElementById('id08').style.display='block'" style="width:150px;">Renew Book </button>
+<div id="id08" class="modal"  align = "center">
+    <form class="form-container" action="book_renew.php" method = "post">
+        <h1>Renew book</h1>
+          <input class="input" name="bid" type="text" value=""><br><br>
+           <label>Issue Date</label> 
+            <input class="input" name="date1" type="date" value=""><br><br>
+            <label>Return Date</label> 
+            <input class="input" name="date2" type="date" value=""><br><br>
+          <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+          <button type="button" onclick="document.getElementById('id08').style.display='none'" class="cancelbtn">Cancel</button>
+    </form>
+</div>
+
+    
+<!-- delete book button  --> 
+<button onclick="document.getElementById('id04').style.display='block'" style="width:150px;">Delete Book </button>
+<div id="id04" class="modal" align = "center">
+   <form class="form-container" action="book_delete.php" method="POST">
+       <h1>Enter Book ID</h1>
+       <label>ID:</label>
+          <input class="input" name="id" type="text" value=""><br><br>
+          <button type="submit" name="submit" class="btn" value="Delete">Submit</button>
+          <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+  </form>
+</div>
+
+<!-- Check by id -->
+<button onclick="document.getElementById('id11').style.display='block'" style="width:150px;">Check by ID </button>
+<div id="id11" class="modal"  align = "center">
+    <form class="form-container" action="check_book.php" method = "post">
+        <h1>Enter Book ID</h1>
+          <input class="input" name="bid" type="text" value=""><br><br>
+          <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+          <button type="button" onclick="document.getElementById('id11').style.display='none'" class="cancelbtn">Cancel</button>
+    </form>
+</div>
+
+
+<!-- Check availability -->
+<button onclick="document.getElementById('id09').style.display='block'" style="width:150px;">Check Availability </button>
+<div id="id09" class="modal"  align = "center">
+    <form class="form-container" action="search_stud.php" method = "post">
+        <h1>Enter Book Name</h1>
+          <input class="input" name="search" type="text" value=""><br><br>
+          <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+          <button type="button" onclick="document.getElementById('id09').style.display='none'" class="cancelbtn">Cancel</button>
+    </form>
+</div>
+</div>  
+   
+  <!-- modify book button  --> 
+<button onclick="document.getElementById('id03').style.display='block'" style="width:150px;">Modify book</button>
+<div id="id03" class="modal" align = "center" >
+     <form class="form-container" action="book_update2.php" method="POST">
+        <h2>Form</h2>
+        <label>ID:</label>
+        <input class="input" name="id" type="text" value=""><br><br>
+        <label>Title:</label>
+        <input class="input" name="title" type="text" value=""><br><br>
+        <label>Edition:</label>
+        <input class="input" name="edition" type="text" value=""><br><br>
+        <label>Author:</label>
+        <input class="input" name="author" type="text" value=""><br><br>
+        <label>ISBN:</label>
+        <input class="input" name="isbn" type="text" value=""><br><br>
+        <label>Availability:</label>
+        <input class="input" name="availability" type="text" value=""><br><br>
+        <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      </form>
+ </div> 
+    <div class="wrap">
+   <div class="search">
+      <form action="search_stud.php" method="POST">
+      <input type="text" class="searchTerm"  name="search" placeholder="Search a book, author">
+      <button  action="search_stud.php" method="POST" type="submit" class="searchButton" >
+       GO!
+     </button>
+     </form>
+   </div>
+</div>
+    
+    
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+    
+</script>
+    </div>
+</body>
+</html>

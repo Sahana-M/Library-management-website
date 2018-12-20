@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {background: #f2f2f2 font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #5b9aa0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    max-width: auto;
+   padding: 10px;
+    background-color: #5b9aa0;
+}
+
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  padding-bottom: 100px;
+  background-color: white;
+  overflow: scroll;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 450px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+        
+.topnav {
+  overflow: hidden;
+  background-color: #000;
+  padding-top: 20px;
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+   
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+    
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 100px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}    
+    
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+</style>
+</head>
+    
+    
+<body>
+   
+<div class="topnav">
+   
+<a class="navbar-brand" href="#">
+    <img src="iiitdwd.jpg" alt="Logo" style="width:40px;">
+  </a>   
+    
+<!-- HOME -->
+ <button onclick="window.location='index.html';" style="width:110px;">Home</button>
+    
+<!-- services  --> 
+<button onclick="window.location='about.html';" style="width:110px;">Services</button>
+    
+<!-- resources  --> 
+<button onclick="window.location='resourses.html';" style="width:110px;">Resources</button>    
+    
+<!-- gallery  --> 
+ <button onclick="window.location='gallery.html';" style="width:110px;">Gallery</button>  
+     
+<!-- About  --> 
+<button onclick="window.location='about.html';" style="width:110px;">About</button>
+
+<!-- Logout  --> 
+<button onclick="window.location='index.html';" style="width:110px; float:right">Log Out</button>
+
+</div>   
+    
+<div data-role="page">
+  <div data-role="header" align = "center">
+    <h1>IIITDWD Student Window</h1>
+  </div>
+
+<div class="sidenav">
+    
+<!-- view book button -->
+<form action="book.php" method="POST">
+<button type="submit" class="btn"  style="width:150px;">View all books</button>
+</form>
+
+<!-- View my books -->
+<form action="stud_view_my.php" method="POST">
+<button type="submit" class="btn"  style="width:150px;">View my books</button>
+</form>
+
+<!-- modify profile button  --> 
+<button onclick="document.getElementById('id03').style.display='block'" style="width:150px;">Update my Profile</button>
+<div id="id03" class="modal" align = "center" >
+     <form class="form-container" action="profile_update.php" method="POST">
+        <h2>Form</h2>
+        <label>First name:</label>
+        <input class="input" name="s_fname" type="text" value="" required/><br><br>
+        <label>Middle name:</label>
+        <input class="input" name="s_mname" type="text" value="" ><br><br>
+        <label>Last name:</label>
+        <input class="input" name="s_lname" type="text" value="" required/><br><br>
+        <label>e-mail:</label>
+        <input class="input" name="s_email" type="text" value="" required/><br><br>
+        <label>Door-no:</label>
+        <input class="input" name="s_doorno" type="text" value="" required/><br><br>
+	<label>Street:</label>
+        <input class="input" name="s_street" type="text" value="" required/><br><br>
+	<label>City:</label>
+        <input class="input" name="s_city" type="text" value="" required/><br><br>
+	<label>Pincode:</label>
+        <input class="input" name="s_pincode" type="text" value="" required/><br><br>
+        <button type="submit" name="submit" class="btn" value="submit">Submit</button>
+        <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      </form>
+ </div>
+</div>
+    
+    
+    
+     
+    <div class="wrap">
+   <div class="search">
+      <form action="search_stud.php" method="POST">
+      <input type="text" class="searchTerm"  name="search" placeholder="Search a book, author">
+      <button type="submit" class="searchButton" >
+       GO!
+     </button>
+     </form>
+   </div>
+</div>
+    
+    
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+    
+</script>
+    </div>
+</body>
+</html>
